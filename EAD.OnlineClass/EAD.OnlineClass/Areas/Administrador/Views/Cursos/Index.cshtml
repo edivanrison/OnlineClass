@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EAD.Onlineclass.Dominio.Cursos>
+
+@{
+    ViewBag.Title = "Pinel Cursos";
+}
+
+<h2>Pinel Cursos</h2>
+
+<p>
+    @Html.ActionLink("Painel", "Inicio", "Painel")
+</p>
+<p>
+    @Html.ActionLink("Novo Curso", "CadastrarCursos")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeDoCurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoCurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarCursos", new { id = item.CursoId }) |
+            @Html.ActionLink("Detalhes", "DetalhesCursos", new { id = item.CursoId }) |
+            @Html.ActionLink("Excluir", "ExcluirCurso", new { id = item.CursoId })
+            </td>
+
+            @using (Html.BeginForm())
+            {
+            }
+
+        </tr>
+    }
+
+</table>

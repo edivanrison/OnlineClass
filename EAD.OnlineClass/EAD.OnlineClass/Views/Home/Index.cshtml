@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EAD.Onlineclass.Dominio.Cursos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            Cursos Basicos
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/Cursos/Cursos/@item.CursoId">@item.NomeDoCurso</a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EAD.Onlineclass.Dominio.Administradores>
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<style>
+    ul li {
+        padding-right: 10px;
+        float: left;
+        list-style: none;
+    }
+</style>
+
+<h2>Inicio</h2>
+
+<div>
+    <ul>
+        <li>
+            @Html.ActionLink("Cursos", "Index", "Cursos")
+        </li>
+        <li>Outros</li>
+    </ul>
+</div>
+<br />
+
+<p>
+    @Html.ActionLink("Cadastrar Administrador", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministradorNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdministradorNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.AdministradorId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.AdministradorId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.AdministradorId })
+            </td>
+        </tr>
+    }
+
+</table>

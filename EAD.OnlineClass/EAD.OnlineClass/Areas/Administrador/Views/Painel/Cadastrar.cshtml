@@ -1,0 +1,51 @@
+﻿@model EAD.Onlineclass.Dominio.Administradores
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Administradores</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdministradorNome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdministradorNome)
+            @Html.ValidationMessageFor(model => model.AdministradorNome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+
+        <p>
+            <input type="submit" value="Cadastrar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Inicio")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

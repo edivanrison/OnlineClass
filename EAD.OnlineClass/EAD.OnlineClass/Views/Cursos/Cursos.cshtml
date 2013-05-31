@@ -1,0 +1,36 @@
+﻿@model EAD.Onlineclass.Dominio.Cursos
+
+@{
+    ViewBag.Title = "Cursos";
+}
+<style type="text/css">
+    .display-label {
+    }
+
+    .display-field {
+    }
+</style>
+
+<h2>Cursos</h2>
+
+<fieldset>
+    <legend>Cursos</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+<p>
+    <div>
+        <a class="btn" href="">Link</a>
+    </div>
+    <div>
+        @Html.ActionLink("Voltar", "Index", "Home")
+    </div>
+    <div>
+        @Html.ActionLink("Cadastre-se Agora", "Cadastro", "Cadastrar")
+    </div>
+</p>

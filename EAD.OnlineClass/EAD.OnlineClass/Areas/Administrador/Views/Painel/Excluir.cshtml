@@ -1,0 +1,32 @@
+﻿@model EAD.Onlineclass.Dominio.Administradores
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que deseja excluir este administrador?</h3>
+<fieldset>
+    <legend>Administradores</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdministradorNome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdministradorNome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar", "Inicio")
+    </p>
+}
